@@ -1,6 +1,6 @@
 {
   "name": "@vue-web-component-library/icon",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Accessible Icon web component for Vue using Google Material Icons",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

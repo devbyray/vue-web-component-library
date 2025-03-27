@@ -1,6 +1,6 @@
 {
   "name": "@vue-web-component-library/input",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Accessible Input web component for Vue",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
