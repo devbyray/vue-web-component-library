@@ -38,7 +38,7 @@
 import { defineProps, defineEmits, computed } from 'vue';
 import { BaseProps, Size } from '@vue-web-component-library/core';
 
-export interface InputProps extends BaseProps {
+export interface InputProps extends /* @vue-ignore */ BaseProps {
   /**
    * The input's value
    */

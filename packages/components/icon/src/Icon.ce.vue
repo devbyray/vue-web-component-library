@@ -15,7 +15,7 @@
 import { defineProps, computed } from 'vue';
 import { BaseProps, Size } from '@vue-web-component-library/core';
 
-export interface IconProps extends BaseProps {
+export interface IconProps extends /* @vue-ignore */ BaseProps {
   /**
    * The name of the Material Icon
    */

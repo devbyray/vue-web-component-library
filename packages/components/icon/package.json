@@ -4,7 +4,7 @@
   "description": "Accessible Icon web component for Vue using Google Material Icons",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],

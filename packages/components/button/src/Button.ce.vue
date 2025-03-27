@@ -17,7 +17,7 @@
 import { defineProps, defineEmits } from 'vue';
 import { BaseProps, Size, Variant } from '@vue-web-component-library/core';
 
-export interface ButtonProps extends BaseProps {
+export interface ButtonProps extends /* @vue-ignore */ BaseProps {
   /**
    * The type of button
    */
