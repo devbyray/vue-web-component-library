@@ -15,6 +15,14 @@
     "lint": "eslint src --ext .ts,.vue",
     "test": "vitest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devbyrayray/vue-web-component-library.git",
+    "directory": "packages/core"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "vue",
     "web-components",
@@ -25,8 +33,5 @@
   "author": "",
   "license": "MIT",
   "sideEffects": false,
-  "publishConfig": {
-    "access": "public"
-  },
   "packageManager": "pnpm@10.6.3"
 }

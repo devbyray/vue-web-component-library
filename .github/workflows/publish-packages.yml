@@ -1,0 +1,71 @@
+name: Publish Packages
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (patch, minor, major, or specific version)'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+          - custom
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@vue-web-component-library'
+      
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
+        with:
+          version: '10.6.3'
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Build packages
+        run: pnpm build
+      
+      - name: Run tests
+        run: pnpm test
+      
+      - name: Configure Git
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      
+      - name: Version packages
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ "${{ github.event.inputs.version }}" == "custom" ]; then
+            echo "Please specify the custom version in the next workflow run."
+            exit 1
+          else
+            pnpm -r exec -- npm version ${{ github.event.inputs.version }} --no-git-tag-version
+          fi
+      
+      - name: Publish packages
+        run: pnpm -r publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

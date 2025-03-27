@@ -15,6 +15,11 @@
     "lint": "eslint src --ext .ts,.vue",
     "test": "vitest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devbyrayray/vue-web-component-library.git",
+    "directory": "packages/components"
+  },
   "keywords": [
     "vue",
     "web-components",
@@ -26,7 +31,7 @@
   "license": "MIT",
   "sideEffects": false,
   "publishConfig": {
-    "access": "public"
+    "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
     "@vue-web-component-library/button": "workspace:*",

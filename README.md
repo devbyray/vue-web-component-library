@@ -25,6 +25,35 @@ npm install @vue-web-component-library/input
 npm install @vue-web-component-library/icon
 ```
 
+### Installing from GitHub Packages
+
+The packages are also available on GitHub Packages. To use them:
+
+1. Create or modify your `.npmrc` file in your project root:
+
+```
+@vue-web-component-library:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+```
+
+2. Set your GitHub token as an environment variable:
+
+```bash
+export GITHUB_TOKEN=your_github_token
+```
+
+3. Install the packages:
+
+```bash
+# Install the entire library
+npm install @vue-web-component-library/components
+
+# Or install individual components
+npm install @vue-web-component-library/button
+npm install @vue-web-component-library/input
+npm install @vue-web-component-library/icon
+```
+
 ## Usage
 
 ### Importing Components
@@ -132,6 +161,21 @@ A component for displaying Google Material Icons.
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
+## Publishing
 
+This library is published to GitHub Packages using a GitHub Actions workflow. To publish a new version:
+
+1. Create a new release on GitHub or
+2. Manually trigger the "Publish Packages" workflow from the Actions tab, selecting the version increment (patch, minor, major)
+
+### GitHub Actions Workflow
+
+The publishing workflow:
+
+1. Builds all packages
+2. Runs tests
+3. Increments versions (when manually triggered)
+4. Publishes packages to GitHub Packages
+
+## License
 MIT
