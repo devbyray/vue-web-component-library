@@ -1,0 +1,38 @@
+{
+  "name": "@vue-web-component-library/components",
+  "version": "0.1.0",
+  "description": "All accessible Vue web components in one package",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "clean": "rimraf dist",
+    "lint": "eslint src --ext .ts,.vue",
+    "test": "vitest"
+  },
+  "keywords": [
+    "vue",
+    "web-components",
+    "design-system",
+    "accessible",
+    "headless"
+  ],
+  "author": "",
+  "license": "MIT",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@vue-web-component-library/button": "workspace:*",
+    "@vue-web-component-library/input": "workspace:*",
+    "@vue-web-component-library/icon": "workspace:*",
+    "@vue-web-component-library/core": "workspace:*",
+    "vue": "^3.5.0"
+  }
+}
