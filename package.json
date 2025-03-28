@@ -1,5 +1,5 @@
 {
-  "name": "vue-web-component-library",
+  "name": "@devbyrayray/vue-wc-library",
   "version": "0.0.2",
   "description": "A Vue-based accessible design system with headless web components",
   "private": true,

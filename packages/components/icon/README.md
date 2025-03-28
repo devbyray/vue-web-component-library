@@ -5,11 +5,9 @@ An accessible, customizable icon component for Vue applications using Google Mat
 ## Installation
 
 ```bash
-npm install @vue-web-component-library/icon
-# or
-pnpm add @vue-web-component-library/icon
-# or
-yarn add @vue-web-component-library/icon
+npm install @devbyrayray/vue-wc-icon
+pnpm add @devbyrayray/vue-wc-icon
+yarn add @devbyrayray/vue-wc-icon
 ```
 
 ## Usage
@@ -17,7 +15,7 @@ yarn add @vue-web-component-library/icon
 ```html
 <!-- Import the component -->
 <script>
-import '@vue-web-component-library/icon';
+import '@devbyrayray/vue-wc-icon';
 </script>
 
 <!-- Basic usage -->

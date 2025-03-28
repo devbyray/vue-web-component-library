@@ -5,11 +5,9 @@ An accessible, customizable button component for Vue applications, built as a we
 ## Installation
 
 ```bash
-npm install @vue-web-component-library/button
-# or
-pnpm add @vue-web-component-library/button
-# or
-yarn add @vue-web-component-library/button
+npm install @devbyrayray/vue-wc-button
+pnpm add @devbyrayray/vue-wc-button
+yarn add @devbyrayray/vue-wc-button
 ```
 
 ## Usage
@@ -17,7 +15,7 @@ yarn add @vue-web-component-library/button
 ```html
 <!-- Import the component -->
 <script>
-import '@vue-web-component-library/button';
+import '@devbyrayray/vue-wc-button';
 </script>
 
 <!-- Basic usage -->

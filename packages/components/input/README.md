@@ -5,11 +5,9 @@ An accessible, customizable input component for Vue applications, built as a web
 ## Installation
 
 ```bash
-npm install @vue-web-component-library/input
-# or
-pnpm add @vue-web-component-library/input
-# or
-yarn add @vue-web-component-library/input
+npm install @devbyrayray/vue-wc-input
+pnpm add @devbyrayray/vue-wc-input
+yarn add @devbyrayray/vue-wc-input
 ```
 
 ## Usage
@@ -17,7 +15,7 @@ yarn add @vue-web-component-library/input
 ```html
 <!-- Import the component -->
 <script>
-import '@vue-web-component-library/input';
+import '@devbyrayray/vue-wc-input';
 </script>
 
 <!-- Basic usage -->

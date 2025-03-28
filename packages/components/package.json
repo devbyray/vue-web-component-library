@@ -1,5 +1,5 @@
 {
-  "name": "@vue-web-component-library/components",
+  "name": "@devbyrayray/vue-wc-components",
   "version": "0.0.2",
   "description": "All accessible Vue web components in one package",
   "main": "dist/index.js",
