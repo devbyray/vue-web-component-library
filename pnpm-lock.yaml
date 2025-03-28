@@ -8,10 +8,10 @@ importers:
 
   .:
     dependencies:
-      '@devbyrayray/vue-wc-core':
+      '@devbyray/vue-wc-core':
         specifier: workspace:*
         version: link:packages/core
-      '@devbyrayray/vue-wc-vite':
+      '@devbyray/vue-wc-vite':
         specifier: workspace:*
         version: link:packages/vite
     devDependencies:
@@ -57,19 +57,19 @@ importers:
 
   packages/components:
     dependencies:
-      '@devbyrayray/vue-wc-button':
+      '@devbyray/vue-wc-button':
         specifier: workspace:*
         version: link:button
-      '@devbyrayray/vue-wc-core':
+      '@devbyray/vue-wc-core':
         specifier: workspace:*
         version: link:../core
-      '@devbyrayray/vue-wc-icon':
+      '@devbyray/vue-wc-icon':
         specifier: workspace:*
         version: link:icon
-      '@devbyrayray/vue-wc-input':
+      '@devbyray/vue-wc-input':
         specifier: workspace:*
         version: link:input
-      '@devbyrayray/vue-wc-vite':
+      '@devbyray/vue-wc-vite':
         specifier: workspace:*
         version: link:../vite
       vue:
@@ -78,10 +78,10 @@ importers:
 
   packages/components/button:
     dependencies:
-      '@devbyrayray/vue-wc-core':
+      '@devbyray/vue-wc-core':
         specifier: workspace:*
         version: link:../../core
-      '@devbyrayray/vue-wc-vite':
+      '@devbyray/vue-wc-vite':
         specifier: workspace:*
         version: link:../../vite
       vue:
@@ -94,10 +94,10 @@ importers:
 
   packages/components/icon:
     dependencies:
-      '@devbyrayray/vue-wc-core':
+      '@devbyray/vue-wc-core':
         specifier: workspace:*
         version: link:../../core
-      '@devbyrayray/vue-wc-vite':
+      '@devbyray/vue-wc-vite':
         specifier: workspace:*
         version: link:../../vite
       vue:
@@ -106,10 +106,10 @@ importers:
 
   packages/components/input:
     dependencies:
-      '@devbyrayray/vue-wc-core':
+      '@devbyray/vue-wc-core':
         specifier: workspace:*
         version: link:../../core
-      '@devbyrayray/vue-wc-vite':
+      '@devbyray/vue-wc-vite':
         specifier: workspace:*
         version: link:../../vite
       vue:
@@ -118,7 +118,7 @@ importers:
 
   packages/core:
     dependencies:
-      '@devbyrayray/vue-wc-vite':
+      '@devbyray/vue-wc-vite':
         specifier: workspace:*
         version: link:../vite
 

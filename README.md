@@ -17,12 +17,12 @@ You can install individual components or the entire library:
 
 ```bash
 # Install the entire library
-npm install @devbyrayray/vue-wc-components
+npm install @devbyray/vue-wc-components
 
 # Or install individual components
-npm install @devbyrayray/vue-wc-button
-npm install @devbyrayray/vue-wc-input
-npm install @devbyrayray/vue-wc-icon
+npm install @devbyray/vue-wc-button
+npm install @devbyray/vue-wc-input
+npm install @devbyray/vue-wc-icon
 ```
 
 ### Installing from GitHub Packages
@@ -32,7 +32,7 @@ The packages are also available on GitHub Packages. To use them:
 1. Create or modify your `.npmrc` file in your project root:
 
 ```
-@devbyrayray:registry=https://npm.pkg.github.com
+@devbyray:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
@@ -46,12 +46,12 @@ export GITHUB_TOKEN=your_github_token
 
 ```bash
 # Install the entire library
-npm install @devbyrayray/vue-wc-components
+npm install @devbyray/vue-wc-components
 
 # Or install individual components
-npm install @devbyrayray/vue-wc-button
-npm install @devbyrayray/vue-wc-input
-npm install @devbyrayray/vue-wc-icon
+npm install @devbyray/vue-wc-button
+npm install @devbyray/vue-wc-input
+npm install @devbyray/vue-wc-icon
 ```
 
 ## Usage
@@ -62,12 +62,12 @@ You can import each component individually:
 
 ```js
 // Import specific components
-import '@devbyrayray/vue-wc-button';
-import '@devbyrayray/vue-wc-input';
-import '@devbyrayray/vue-wc-icon';
+import '@devbyray/vue-wc-button';
+import '@devbyray/vue-wc-input';
+import '@devbyray/vue-wc-icon';
 
 // Or import everything
-import '@devbyrayray/vue-wc-components';
+import '@devbyray/vue-wc-components';
 ```
 
 ### Using in HTML

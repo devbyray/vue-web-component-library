@@ -1,5 +1,5 @@
 {
-  "name": "@devbyrayray/vue-wc-library",
+  "name": "@devbyray/vue-wc-library",
   "version": "0.0.4",
   "description": "A Vue-based accessible design system with headless web components",
   "private": true,
@@ -36,7 +36,7 @@
     "vue": "^3.5.13"
   },
   "dependencies": {
-    "@devbyrayray/vue-wc-core": "workspace:*",
-    "@devbyrayray/vue-wc-vite": "workspace:*"
+    "@devbyray/vue-wc-core": "workspace:*",
+    "@devbyray/vue-wc-vite": "workspace:*"
   }
 }
