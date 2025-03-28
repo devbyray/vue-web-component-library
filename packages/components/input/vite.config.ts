@@ -1,4 +1,4 @@
-import { defineBaseConfig } from '@devbyrayray/vue-wc-vite';
+import { defineBaseConfig } from '@devbyray/vue-wc-vite';
 
 export default defineBaseConfig({
   name: 'vwcInput',

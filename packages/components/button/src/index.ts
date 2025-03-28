@@ -1,6 +1,6 @@
 import { defineCustomElement as VueDefineCustomElement } from 'vue';
 import ButtonComponent from './Button.ce.vue';
-import { defineCustomElement, COMPONENT_NAMES } from '@devbyrayray/vue-wc-core';
+import { defineCustomElement, COMPONENT_NAMES } from '@devbyray/vue-wc-core';
 
 // Define the Button as a Vue custom element
 const ButtonElement = VueDefineCustomElement(ButtonComponent);

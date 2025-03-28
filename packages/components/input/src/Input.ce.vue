@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, computed } from '@devbyrayray/vue-wc-core';
+import { defineProps, defineEmits, computed } from '@devbyray/vue-wc-core';
 
 export interface InputProps extends /* @vue-ignore */ BaseProps {
   /**

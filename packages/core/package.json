@@ -1,5 +1,5 @@
 {
-  "name": "@devbyrayray/vue-wc-core",
+  "name": "@devbyray/vue-wc-core",
   "version": "0.0.4",
   "description": "Core utilities for Vue Web Component Library",
   "main": "dist/index.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devbyrayray/vue-web-component-library.git",
+    "url": "git+https://github.com/devbyray/vue-web-component-library.git",
     "directory": "packages/core"
   },
   "publishConfig": {
@@ -34,6 +34,6 @@
   "sideEffects": false,
   "packageManager": "pnpm@10.6.3",
   "dependencies": {
-    "@devbyrayray/vue-wc-vite": "workspace:*"
+    "@devbyray/vue-wc-vite": "workspace:*"
   }
 }

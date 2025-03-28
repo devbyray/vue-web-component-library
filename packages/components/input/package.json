@@ -1,5 +1,5 @@
 {
-  "name": "@devbyrayray/vue-wc-input",
+  "name": "@devbyray/vue-wc-input",
   "version": "0.0.4",
   "description": "Accessible Input web component for Vue",
   "main": "dist/index.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devbyrayray/vue-web-component-library.git",
+    "url": "git+https://github.com/devbyray/vue-web-component-library.git",
     "directory": "packages/components/input"
   },
   "keywords": [
@@ -34,8 +34,8 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@devbyrayray/vue-wc-core": "workspace:*",
-    "@devbyrayray/vue-wc-vite": "workspace:*",
+    "@devbyray/vue-wc-core": "workspace:*",
+    "@devbyray/vue-wc-vite": "workspace:*",
     "vue": "^3.5.0"
   }
 }

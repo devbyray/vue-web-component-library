@@ -12,7 +12,7 @@ export function defineBaseConfig(overrides) {
     // Add all vue-web-component-library packages to externals
     const allExternals = [
         ...externals,
-        /@devbyrayray\/vue-wc-.*/
+        /@devbyray\/vue-wc-.*/
     ];
 
     const config = {

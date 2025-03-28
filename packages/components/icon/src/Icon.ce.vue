@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { defineProps, computed } from 'vue';
-import { BaseProps, Size } from '@devbyrayray/vue-wc-core';
+import { BaseProps, Size } from '@devbyray/vue-wc-core';
 
 export interface IconProps extends /* @vue-ignore */ BaseProps {
   /**

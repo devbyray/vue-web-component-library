@@ -1,5 +1,5 @@
 {
-  "name": "@devbyrayray/vue-wc-components",
+  "name": "@devbyray/vue-wc-components",
   "version": "0.0.4",
   "description": "All accessible Vue web components in one package",
   "main": "dist/index.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devbyrayray/vue-web-component-library.git",
+    "url": "git+https://github.com/devbyray/vue-web-component-library.git",
     "directory": "packages/components"
   },
   "keywords": [
@@ -33,11 +33,11 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@devbyrayray/vue-wc-button": "workspace:*",
-    "@devbyrayray/vue-wc-input": "workspace:*",
-    "@devbyrayray/vue-wc-icon": "workspace:*",
-    "@devbyrayray/vue-wc-core": "workspace:*",
-    "@devbyrayray/vue-wc-vite": "workspace:*",
+    "@devbyray/vue-wc-button": "workspace:*",
+    "@devbyray/vue-wc-input": "workspace:*",
+    "@devbyray/vue-wc-icon": "workspace:*",
+    "@devbyray/vue-wc-core": "workspace:*",
+    "@devbyray/vue-wc-vite": "workspace:*",
     "vue": "^3.5.0"
   }
 }
