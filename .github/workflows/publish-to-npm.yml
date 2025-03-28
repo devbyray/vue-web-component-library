@@ -60,7 +60,14 @@ jobs:
           else
             pnpm -r exec -- npm version ${{ github.event.inputs.version }} --no-git-tag-version
           fi
-
+      - name: Setup NPM config
+        run: |
+            echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
+            echo "registry=https://registry.npmjs.org/" >> .npmrc
+            echo "always-auth=true" >> .npmrc
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        
       - name: Publish each package separately
         run: |
             pnpm -r --filter "@devbyray/vue-wc-components" publish --access public --no-git-checks --registry=https://registry.npmjs.org/
