@@ -1,6 +1,6 @@
 {
   "name": "vue-web-component-library",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Vue-based accessible design system with headless web components",
   "private": true,
   "scripts": {
