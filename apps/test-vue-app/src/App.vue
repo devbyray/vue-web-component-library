@@ -6,13 +6,14 @@ import '@devbyray/vue-wc-components'
 <template>
   <header>
     <!-- Button component -->
-    <vwc-button size="md" variant="primary">Click me</vwc-button>
+    <vwc-button size="md" variant="primary">Click me <vwc-icon name="home" size="md"
+        color="#fff"></vwc-icon></vwc-button>
 
     <!-- Input component -->
     <vwc-input placeholder="Enter your username"></vwc-input>
 
     <!-- Icon component -->
-    <vwc-icon name="home" size="md" color="#FFD700"></vwc-icon>
+    <vwc-icon name="person" size="lg" color="#FFD700"></vwc-icon>
   </header>
 </template>
 
