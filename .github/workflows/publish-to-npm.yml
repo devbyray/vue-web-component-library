@@ -62,6 +62,6 @@ jobs:
           fi
 
       - name: Publish to NPM
-        run: pnpm -r --filter "!./package/core" --filter "!./package/vite" --filter "!./apps" publish --access public
+        run: pnpm -r --filter "!./package/core" --filter "!./package/vite" --filter "!./apps" publish --access public  --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
