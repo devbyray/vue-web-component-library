@@ -34,8 +34,8 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@vue-web-component-library/core": "workspace:*",
-    "@vue-web-component-library/vite": "workspace:*",
+    "@devbyrayray/vue-wc-core": "workspace:*",
+    "@devbyrayray/vue-wc-vite": "workspace:*",
     "vue": "^3.5.0"
   }
 }

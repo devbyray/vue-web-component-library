@@ -35,6 +35,7 @@ jobs:
           node-version: '20'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@devbyrayray'
+          cache: 'pnpm'
       
       - name: Setup PNPM
         uses: pnpm/action-setup@v3

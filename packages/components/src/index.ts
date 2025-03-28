@@ -1,12 +1,12 @@
 // Export individual components with renamed exports to avoid conflicts
-export { default as ButtonElement } from '@vue-web-component-library/button';
-export { default as InputElement } from '@vue-web-component-library/input';
-export { default as IconElement } from '@vue-web-component-library/icon';
+export { default as ButtonElement } from '@devbyrayray/vue-wc-button';
+export { default as InputElement } from '@devbyrayray/vue-wc-input';
+export { default as IconElement } from '@devbyrayray/vue-wc-icon';
 
 // Import register functions with explicit names to avoid conflicts
-import { register as registerButton } from '@vue-web-component-library/button';
-import { register as registerInput } from '@vue-web-component-library/input';
-import { register as registerIcon } from '@vue-web-component-library/icon';
+import { register as registerButton } from '@devbyrayray/vue-wc-button';
+import { register as registerInput } from '@devbyrayray/vue-wc-input';
+import { register as registerIcon } from '@devbyrayray/vue-wc-icon';
 
 /**
  * Register all components at once

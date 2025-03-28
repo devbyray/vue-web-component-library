@@ -35,8 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, computed } from 'vue';
-import { BaseProps, Size } from '@vue-web-component-library/core';
+import { defineProps, defineEmits, computed } from '@devbyrayray/vue-wc-core';
 
 export interface InputProps extends /* @vue-ignore */ BaseProps {
   /**
@@ -82,6 +81,8 @@ const props = withDefaults(defineProps<InputProps>(), {
   size: 'md',
   disabled: false,
   required: false,
+  helperText: undefined,
+  error: undefined,
 });
 
 defineEmits<{

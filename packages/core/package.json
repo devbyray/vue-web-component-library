@@ -34,6 +34,6 @@
   "sideEffects": false,
   "packageManager": "pnpm@10.6.3",
   "dependencies": {
-    "@vue-web-component-library/vite": "workspace:*"
+    "@devbyrayray/vue-wc-vite": "workspace:*"
   }
 }

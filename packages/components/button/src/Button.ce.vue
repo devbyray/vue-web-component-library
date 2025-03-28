@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue';
-import { BaseProps, Size, Variant } from '@vue-web-component-library/core';
+import { BaseProps, Size, Variant } from '@devbyrayray/vue-wc-core';
 
 export interface ButtonProps extends /* @vue-ignore */ BaseProps {
   /**

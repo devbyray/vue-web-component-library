@@ -33,11 +33,11 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@vue-web-component-library/button": "workspace:*",
-    "@vue-web-component-library/input": "workspace:*",
-    "@vue-web-component-library/icon": "workspace:*",
-    "@vue-web-component-library/core": "workspace:*",
-    "@vue-web-component-library/vite": "workspace:*",
+    "@devbyrayray/vue-wc-button": "workspace:*",
+    "@devbyrayray/vue-wc-input": "workspace:*",
+    "@devbyrayray/vue-wc-icon": "workspace:*",
+    "@devbyrayray/vue-wc-core": "workspace:*",
+    "@devbyrayray/vue-wc-vite": "workspace:*",
     "vue": "^3.5.0"
   }
 }

@@ -1,6 +1,6 @@
 import { defineCustomElement as VueDefineCustomElement } from 'vue';
 import InputComponent from './Input.ce.vue';
-import { defineCustomElement, COMPONENT_NAMES } from '@vue-web-component-library/core';
+import { defineCustomElement, COMPONENT_NAMES } from '@devbyrayray/vue-wc-core';
 
 // Define the Input as a Vue custom element
 const InputElement = VueDefineCustomElement(InputComponent);
