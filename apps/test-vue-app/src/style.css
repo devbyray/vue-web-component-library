@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded');
+
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --default-border-radius: 2rem;
+  
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Button customization */
+  --vwc-button-primary-bg: #b83bf6;
+  --vwc-button-primary-text: white;
+  --vwc-button-primary-hover-bg: #a72ce8;
+  --vwc-button-primary-hover-text: white;
+  --vwc-button-radius: var( --default-border-radius);
+  
+  /* Input customization */
+  --vwc-input-border: 2px solid #c5d3ef;
+  --vwc-input-radius: var( --default-border-radius);
+  --vwc-input-focus-border-color: #e54686;
+  
+  /* Icon customization */
+  --vwc-icon-md-size: 1.75rem;
+  --vwc-icon-color: #4f46e5;
+}
+
+
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
