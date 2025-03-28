@@ -1,13 +1,7 @@
 <template>
-  <span
-    :id="props.id"
-    class="vwc-icon"
-    :class="[props.size, { 'vwc-icon-spin': props.spin }]"
-    :aria-hidden="!props.label"
-    :aria-label="props.label"
-    :role="props.label ? 'img' : undefined"
-  >
-    <span class="material-icons" :style="iconStyles">{{ props.name }}</span>
+  <span :id="props.id" class="vwc-icon" :class="[props.size, { 'vwc-icon-spin': props.spin }]"
+    :aria-hidden="!props.label" :aria-label="props.label" :role="props.label ? 'img' : undefined">
+    <span class="material-symbols" :style="iconStyles">{{ props.name }}</span>
   </span>
 </template>
 
@@ -47,13 +41,15 @@ const props = withDefaults(defineProps<IconProps>(), {
 const iconStyles = computed(() => {
   return {
     color: props.color || 'currentColor',
+    'font-variation-settings': "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24",
   };
 });
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
+.material-symbols {
+  font-family: var(--vwc-icon-font-family, 'Material Symbols Rounded');
+}
 .vwc-icon {
   display: inline-flex;
   align-items: center;
@@ -85,6 +81,7 @@ const iconStyles = computed(() => {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

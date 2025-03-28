@@ -10,6 +10,22 @@ pnpm add @devbyray/vue-wc-icon
 yarn add @devbyray/vue-wc-icon
 ```
 
+You have to load the Google Material Icon font yourself via HTML or CSS:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded');
+```
+
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+```
+
+_This is because the components are web components and work with a Shadow DOM._
+
+## Available Icons
+
+This component uses Google Material Icons. You can find all available icons in the [Material Icons Library](https://fonts.google.com/icons?selected=Material+Icons).
+
 ## Usage
 
 ```html
@@ -36,9 +52,9 @@ import '@devbyray/vue-wc-icon';
 <vwc-icon name="delete" label="Delete item"></vwc-icon>
 ```
 
-## Available Icons
 
-This component uses Google Material Icons. You can find all available icons in the [Material Icons Library](https://fonts.google.com/icons?selected=Material+Icons).
+
+
 
 ## Props
 
