@@ -2,7 +2,7 @@
   "name": "@devbyray/vue-wc-library",
   "version": "0.0.7",
   "description": "A Vue-based accessible design system with headless web components",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "pnpm -r build",
     "dev": "pnpm -r dev",

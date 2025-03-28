@@ -42,6 +42,9 @@ The packages are also available on GitHub Packages. To use them:
 export GITHUB_TOKEN=your_github_token
 ```
 
+> You can create a token on your [Github Profile settings](https://github.com/settings/tokens). You should have `read:packages` scope selected.
+![alt text](./assets/github-token-screenshot.png)
+
 3. Install the packages:
 
 ```bash
@@ -178,4 +181,4 @@ The publishing workflow:
 4. Publishes packages to GitHub Packages
 
 ## License
-MIT
+EUPL-1.2

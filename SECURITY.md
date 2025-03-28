@@ -6,15 +6,15 @@ Use this section to tell people about which versions of your project are current
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| 0.0.7   | :white_check_mark: |
+| < 0.0   | :x:                |
 
 ## Reporting a Vulnerability
 
 We take the security of our project seriously. If you believe you've found a security vulnerability, please follow these steps:
 
 1. **Do not disclose the vulnerability publicly**
-2. Email us at [security@example.com](mailto:security@example.com) with details about the vulnerability
+2. Email us at [security@dbyrayray.dev](mailto:security@dbyrayray.dev) with details about the vulnerability
 3. Include steps to reproduce the issue if possible
 4. We will acknowledge your email within 48 hours
 5. We will send you regular updates about our progress
