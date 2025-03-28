@@ -55,6 +55,22 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.2)
 
+  apps/test-vue-app:
+    dependencies:
+      '@devbyray/vue-wc-components':
+        specifier: workspace:^
+        version: link:../../packages/components
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.13(typescript@5.8.2)
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.3(vite@6.2.3(@types/node@22.13.14))(vue@3.5.13(typescript@5.8.2))
+      vite:
+        specifier: ^6.2.0
+        version: 6.2.3(@types/node@22.13.14)
+
   packages/components:
     dependencies:
       '@devbyray/vue-wc-button':
