@@ -19,6 +19,10 @@
     "outDir": "dist",
     "esModuleInterop": true
   },
-  "include": ["packages/**/src/**/*.ts", "packages/**/src/**/*.vue"],
+  "include": [
+    "packages/**/src/**/*.ts",
+    "packages/**/src/**/*.vue",
+    "packages/components/vue-shim.d.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }

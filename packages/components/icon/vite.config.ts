@@ -1,5 +1,5 @@
-import { createBaseConfig } from '../../../config/vite.base.js';
+import { defineBaseConfig } from '@vue-web-component-library/vite';
 
-export default createBaseConfig({
+export default defineBaseConfig({
   name: 'vwcIcon',
 });

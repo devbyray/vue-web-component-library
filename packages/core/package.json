@@ -12,8 +12,7 @@
     "build": "vite build",
     "dev": "vite build --watch",
     "clean": "rimraf dist",
-    "lint": "eslint src --ext .ts,.vue",
-    "test": "vitest"
+    "lint": "eslint src --ext .ts,.vue"
   },
   "repository": {
     "type": "git",
@@ -33,5 +32,8 @@
   "author": "",
   "license": "MIT",
   "sideEffects": false,
-  "packageManager": "pnpm@10.6.3"
+  "packageManager": "pnpm@10.6.3",
+  "dependencies": {
+    "@vue-web-component-library/vite": "workspace:*"
+  }
 }

@@ -12,8 +12,7 @@
     "build": "vite build",
     "dev": "vite build --watch",
     "clean": "rimraf dist",
-    "lint": "eslint src --ext .ts,.vue",
-    "test": "vitest"
+    "lint": "eslint src --ext .ts,.vue"
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,10 @@
   },
   "dependencies": {
     "@vue-web-component-library/core": "workspace:*",
+    "@vue-web-component-library/vite": "workspace:*",
     "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14"
   }
 }
