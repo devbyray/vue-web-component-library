@@ -1,6 +1,6 @@
 {
   "name": "@devbyrayray/vue-wc-core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Core utilities for Vue Web Component Library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
