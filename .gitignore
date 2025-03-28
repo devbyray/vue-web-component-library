@@ -9,3 +9,4 @@ node_modules
 */.vite
 dist
 */dist
+apps/documentation/.vitepress/cache/deps/*
