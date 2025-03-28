@@ -63,9 +63,9 @@ jobs:
 
       - name: Publish each package separately
         run: |
-            pnpm -r --filter "packages/components/components" publish --access public --no-git-checks
-            pnpm -r --filter "packages/components/button" publish --access public --no-git-checks
-            pnpm -r --filter "packages/components/icon" publish --access public --no-git-checks
-            pnpm -r --filter "packages/components/input" publish --access public --no-git-checks
+            pnpm -r --filter "@devbyray/vue-wc-components" publish --access public --no-git-checks
+            pnpm -r --filter "@devbyray/vue-wc-button" publish --access public --no-git-checks
+            pnpm -r --filter "@devbyray/vue-wc-icon" publish --access public --no-git-checks
+            pnpm -r --filter "@devbyray/vue-wc-input" publish --access public --no-git-checks
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
