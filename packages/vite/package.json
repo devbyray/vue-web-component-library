@@ -1,6 +1,6 @@
 {
     "name": "@devbyray/vue-wc-vite",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "Reuseable Vite config for Vue Web Component Library",
     "main": "vite.config.ts",
     "author": "",

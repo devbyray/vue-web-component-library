@@ -1,6 +1,6 @@
 {
   "name": "@devbyray/vue-wc-components",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "All accessible Vue web components in one package",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
