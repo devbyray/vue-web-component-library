@@ -1,6 +1,6 @@
 {
   "name": "@devbyray/vue-wc-library",
-  "version": "0.0.7",
+  "version": "0.0.12",
   "description": "A Vue-based accessible design system with headless web components",
   "private": false,
   "scripts": {

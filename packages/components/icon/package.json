@@ -1,6 +1,6 @@
 {
   "name": "@devbyray/vue-wc-icon",
-  "version": "0.0.7",
+  "version": "0.0.12",
   "description": "Accessible Icon web component for Vue using Google Material Icons",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

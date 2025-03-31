@@ -1,4 +1,4 @@
-name: Publish Packages
+name: Publish To Github
 
 on:
   release:
@@ -62,7 +62,11 @@ jobs:
             pnpm -r exec -- npm version ${{ github.event.inputs.version }} --no-git-tag-version
           fi
       
-      - name: Publish packages
-        run: pnpm -r --filter "[!core]" --filter "[!vite]" --filter "[!apps/**]" publish --no-git-checks
+      - name: Publish each package separately
+        run: |
+          pnpm -r --filter "@devbyray/vue-wc-components" publish --access public --no-git-checks
+          pnpm -r --filter "@devbyray/vue-wc-button" publish --access public --no-git-checks
+          pnpm -r --filter "@devbyray/vue-wc-icon" publish --access public --no-git-checks
+          pnpm -r --filter "@devbyray/vue-wc-input" publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
