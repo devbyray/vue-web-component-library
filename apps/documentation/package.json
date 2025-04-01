@@ -14,6 +14,7 @@
     "vitepress": "^1.6.3"
   },
   "dependencies": {
+    "@devbyray/vue-wc-components": "workspace:^",
     "highlight.js": "^11.11.1"
   }
 }
