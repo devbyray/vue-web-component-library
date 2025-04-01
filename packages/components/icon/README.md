@@ -2,6 +2,8 @@
 
 An accessible, customizable icon component for Vue applications using Google Material Icons, built as a web component.
 
+[Find the latest version on Github](https://github.com/devbyray/vue-web-component-library/pkgs/npm/vue-wc-icon)
+
 ## Installation
 
 ```bash

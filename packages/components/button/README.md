@@ -2,6 +2,8 @@
 
 An accessible, customizable button component for Vue applications, built as a web component.
 
+[Find the latest version on Github](https://github.com/devbyray/vue-web-component-library/pkgs/npm/vue-wc-button)
+
 ## Installation
 
 ```bash
