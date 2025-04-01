@@ -1,14 +1,19 @@
 {
-  "name": "documentation",
+  "name": "@devbyray/vue-wc-documentation",
   "version": "0.0.7",
   "description": "A Vue-based accessible design system with headless web components",
   "private": false,
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "dev": "npm run copy-readme && vitepress dev",
+    "build": "npm run copy-readme && vitepress build",
+    "preview": "vitepress preview",
+    "copy-readme": "node scripts/copy-readme.js"
   },
   "devDependencies": {
+    "marked": "^15.0.7",
     "vitepress": "^1.6.3"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1"
   }
 }
