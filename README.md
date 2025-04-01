@@ -2,6 +2,22 @@
 
 A Vue-based accessible design system with headless web components. This library provides accessible, customizable components that can be imported individually to optimize bundle size.
 
+> This library is WIP (Work-In-Progress)
+
+## Is This Library Right For You?
+
+This library is framework agnostic at the component level, but requires Vue.js as a dependency to function. Consider this library if:
+
+- Your application doesn't have a framework yet and you're looking for a solid foundation to build on
+- Your application is already built with Vue.js and you need consistent, accessible components
+- You want to use the same components across multiple projects with different technologies
+
+Note that if your main application uses React, Angular, or another non-Vue framework, you might want to consider a framework-specific component library instead for better integration:
+
+- For **React** applications: [shadcn/ui](https://ui.shadcn.com/) offers beautifully designed components that you can copy and paste into your apps
+- For **Angular** applications: [Angular Material](https://material.angular.io/) provides a comprehensive suite of UI components following Material Design principles
+
+
 ## Features
 
 - 🧩 **Web Components**: Use anywhere, framework-agnostic
