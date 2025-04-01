@@ -28,7 +28,7 @@ pnpm dev
 This will:
 1. Run the copy-readme script to gather all README files
 2. Start the VitePress development server
-3. Open http://localhost:5173 in your browser (or similar port)
+3. Open `http://localhost:5173` in your browser (or similar port)
 
 ### Building for Production
 
