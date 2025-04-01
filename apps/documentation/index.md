@@ -18,6 +18,6 @@ features:
     link: /docs/components/input
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Icon component
-    link: /docs/component/icon
+    link: /docs/components/icon
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---

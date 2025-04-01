@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 
 // Import modules
-const { cleanDirectory } = require('./utils')
+const { cleanDirectory, ensureDirectoryExists } = require('./utils')
 const { copyMarkdownFiles, updateMarkdownImagePaths, updateAllMarkdownImagePaths } = require('./markdown-handler')
 const { copyImages } = require('./image-handler')
 
@@ -70,14 +70,7 @@ const copyComponentReadmeFiles = () => {
   }
 }
 
-/**
- * Ensure directory exists, create it if it doesn't
- */
-const ensureDirectoryExists = (dirPath) => {
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true })
-  }
-}
+// Removed local implementation of ensureDirectoryExists as it is now imported from utils.js
 
 /**
  * Main function to copy all README and markdown files
