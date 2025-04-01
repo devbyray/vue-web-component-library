@@ -26,6 +26,60 @@ const copyRootReadme = () => {
 }
 
 /**
+ * Copy component README files specifically
+ */
+const copyComponentReadmeFiles = () => {
+  const componentsDir = path.resolve(__dirname, '../../../packages/components')
+  const targetBaseDir = path.resolve(__dirname, '../public/packages/components')
+  
+  // Make sure the target base directory exists
+  ensureDirectoryExists(targetBaseDir)
+  
+  // Read the components directory to find all components
+  if (fs.existsSync(componentsDir)) {
+    const entries = fs.readdirSync(componentsDir, { withFileTypes: true })
+    
+    // Filter for only directories that might be components
+    const componentDirs = entries.filter(entry => 
+      entry.isDirectory() && entry.name !== 'node_modules' && entry.name !== 'src'
+    )
+    
+    // Process each component directory
+    componentDirs.forEach(componentDir => {
+      const componentSourcePath = path.join(componentsDir, componentDir.name)
+      const componentTargetPath = path.join(targetBaseDir, componentDir.name)
+      
+      // Make sure the target directory for this component exists
+      ensureDirectoryExists(componentTargetPath)
+      
+      // Check if this component has a README
+      const readmePath = path.join(componentSourcePath, 'README.md')
+      if (fs.existsSync(readmePath)) {
+        // Copy the README file
+        fs.copyFileSync(readmePath, path.join(componentTargetPath, 'README.md'))
+        console.log(`Copied component README.md for ${componentDir.name}`)
+        
+        // Update image paths in the component README
+        updateMarkdownImagePaths(
+          path.join(componentTargetPath, 'README.md'), 
+          'assets/', 
+          '/assets/'
+        )
+      }
+    })
+  }
+}
+
+/**
+ * Ensure directory exists, create it if it doesn't
+ */
+const ensureDirectoryExists = (dirPath) => {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true })
+  }
+}
+
+/**
  * Main function to copy all README and markdown files
  */
 const copyReadmeFiles = () => {
@@ -69,6 +123,9 @@ const copyReadmeFiles = () => {
 
   // Copy the root README.md
   copyRootReadme()
+  
+  // Copy component README files specifically to ensure they're included
+  copyComponentReadmeFiles()
 
   // Copy images used in the root README.md
   const rootAssetsDir = path.resolve(__dirname, '../../../assets')

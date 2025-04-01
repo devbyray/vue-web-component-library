@@ -64,16 +64,21 @@ const applySyntaxHighlighting = () => {
   
   // Apply highlighting to each code block
   codeBlocks?.forEach((block) => {
+    // Make sure block has a className property
+    if (!block || typeof block.className !== 'string') {
+      return
+    }
+    
     // Check if a language class is present
     const classList = block.className.split(' ')
-    const langClass = classList.find(cls => cls.startsWith('language-'))
+    const langClass = classList.find(cls => typeof cls === 'string' && cls.startsWith('language-'))
     
     if (langClass) {
       // Extract the language name
-      const lang = langClass?.replace('language-', '')
+      const lang = typeof langClass === 'string' ? langClass.replace('language-', '') : ''
       
       // Apply highlighting if the language is supported
-      if (hljs.getLanguage(lang)) {
+      if (lang && hljs.getLanguage(lang)) {
         hljs.highlightElement(block)
       } else {
         // Try auto-detection for unknown languages
