@@ -7,26 +7,17 @@ hero:
   text: "Vue-based accessible design system"
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Get started with our components
+      link: /docs/components
 
 features:
-  - title: Feature A
+  - title: Button component
+    link: /docs/components/button
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
+  - title: Input component
+    link: /docs/components/input
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - title: Icon component
+    link: /docs/component/icon
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
-## Components
-
-Check out our component documentation:
-
-- [Components](/docs/components)
-- [Button](/docs/components/button)
-- [Input](/docs/components/input)
-<!-- - [Icon](/docs/components/icon) -->
