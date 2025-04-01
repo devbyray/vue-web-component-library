@@ -11,4 +11,4 @@ dist
 */dist
 apps/*/.vitepress/cache/deps/*
 apps/*/public/assets/github-token-screenshot.png
-apps/*/public/*.md
+apps/*/public/**/*.md
