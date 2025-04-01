@@ -1,6 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
+import MarkdownImporter from '../../components/MarkdownImporter.vue'
 import './style.css'
 
 /** @type {import('vitepress').Theme} */
@@ -13,5 +14,6 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     // ...
+    app.component('MarkdownImporter', MarkdownImporter)
   }
 }

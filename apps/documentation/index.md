@@ -22,3 +22,11 @@ features:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+## Components
+
+Check out our component documentation:
+
+- [Components](/docs/components)
+- [Button](/docs/components/button)
+- [Input](/docs/components/input)
+<!-- - [Icon](/docs/components/icon) -->
