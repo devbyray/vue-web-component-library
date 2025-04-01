@@ -4,6 +4,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Vue Web Component Library",
   description: "Vue-based accessible design system",
+  markdown: {
+    ignoreDeadLinks: ['#file:README.md'],
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
