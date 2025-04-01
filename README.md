@@ -1,4 +1,4 @@
-# Vue Web Component Library
+# Vue Web Component Library (WIP)
 
 A Vue-based accessible design system with headless web components. This library provides accessible, customizable components that can be imported individually to optimize bundle size.
 
