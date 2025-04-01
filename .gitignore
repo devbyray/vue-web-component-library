@@ -9,5 +9,6 @@ node_modules
 */.vite
 dist
 */dist
-
-apps/documentation/.vitepress/cache
+apps/*/.vitepress/cache/deps/*
+apps/*/public/assets/github-token-screenshot.png
+apps/*/public/**/*.md

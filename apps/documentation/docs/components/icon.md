@@ -1,0 +1,1 @@
+<MarkdownImporter path="packages/components/icon/README.md" />
