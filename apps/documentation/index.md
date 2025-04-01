@@ -13,11 +13,13 @@ hero:
 features:
   - title: Button component
     link: /docs/components/button
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: A versatile button component with support for different styles, sizes, and states to enhance user interactions.
+
   - title: Input component
     link: /docs/components/input
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: A customizable input field component designed for accessibility and seamless data entry.
+
   - title: Icon component
     link: /docs/components/icon
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: A library of scalable and accessible icons to complement your design system.
 ---
