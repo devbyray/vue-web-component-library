@@ -4,8 +4,7 @@ import DefaultTheme from 'vitepress/theme'
 import MarkdownImporter from '../../components/MarkdownImporter.vue'
 import ComponentExample from '../../components/ComponentExample.vue'
 import './style.css'
-// Import the package via its entry point
-import '@devbyray/vue-wc-components/dist/index.js'
+import '@devbyray/vue-wc-components'
 
 /** @type {import('vitepress').Theme} */
 export default {

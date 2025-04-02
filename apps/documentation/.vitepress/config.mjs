@@ -38,17 +38,15 @@ export default defineConfig({
     optimizeDeps: {
       include: ['marked']
     },
-    resolve: {
-      alias: {
-        // Point to the specific dist file rather than the directory
-        '@devbyray/vue-wc-components': resolve(__dirname, '../../../packages/components/dist/index.js'),
-        '@devbyray/vue-wc-components/dist/index.js': resolve(__dirname, '../../../packages/components/dist/index.js')
-      }
-    },
-    build: {
-      commonjsOptions: {
-        strictRequires: true
-      }
-    }
+    // resolve: {
+    //   alias: {
+    //     '@devbyray/vue-wc-components': resolve(__dirname, '../../../packages/components')
+    //   }
+    // },
+    // build: {
+    //   commonjsOptions: {
+    //     strictRequires: true
+    //   }
+    // }
   }
 })
