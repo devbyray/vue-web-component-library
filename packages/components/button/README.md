@@ -20,7 +20,7 @@ import '@devbyray/vue-wc-button';
 </script>
 
 <!-- Basic usage -->
-<vwc-button>Click me</vwc-button>
+<vwc-button @click="() => console.log('Click')">Click me</vwc-button>
 
 <!-- With variants -->
 <vwc-button variant="primary">Primary Button</vwc-button>

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, nextTick, onBeforeUnmount } from 'vue'
+import { ref, watch, nextTick, onBeforeUnmount, onMounted } from 'vue'
 
 // Define props with default values to simplify usage in markdown
 const props = defineProps({
@@ -35,6 +35,7 @@ const displayCode = ref(props.code)
 const displayStyle = ref(typeof props.style === 'string' ? props.style : '')
 const previewContainer = ref(null)
 const styleElement = ref(null)
+const componentId = ref(`example-${Math.random().toString(36).substring(2, 9)}`)
 
 // Track the active tab (code or style)
 const activeTab = ref('code')
@@ -54,7 +55,10 @@ watch(() => props.style, (newStyle) => {
     const styleStr = typeof newStyle === 'string' ? newStyle : ''
     currentStyle.value = styleStr
     displayStyle.value = styleStr
-    applyStyles()
+    // Make sure to apply styles when they change
+    nextTick(() => {
+        applyStyles()
+    })
 })
 
 // Handle code changes from the textarea
@@ -95,45 +99,78 @@ const renderCode = async () => {
     applyStyles()
 }
 
+// Add a helper function that creates a component-specific stylesheet
+const createComponentStyles = () => {
+    // Use our stored component ID for consistent style targeting
+    const styleId = `ce-styles-${componentId.value}`
+    
+    // Check if an existing style element exists with this ID
+    const existingStyle = document.getElementById(styleId)
+    if (existingStyle) {
+        return existingStyle
+    }
+    
+    // Create a new style element for our component
+    const styleEl = document.createElement('style')
+    styleEl.id = styleId
+    
+    // Add to document head for global CSS variable access
+    document.head.appendChild(styleEl)
+    
+    console.log('Created new style element:', styleId)
+    return styleEl
+}
+
 // Function to apply styles to the preview
 const applyStyles = () => {
-    // Don't proceed if there's no content or container
-    if (!displayStyle.value || !previewContainer.value) return
+    // Don't proceed if there's no container
+    if (!previewContainer.value) return
     
     try {
-        // Create a style element if it doesn't exist
+        // Make sure we have styles to apply, default to empty string
+        const styleContent = displayStyle.value || ''
+        
+        // Get or create our style element
         if (!styleElement.value) {
-            styleElement.value = document.createElement('style')
-            styleElement.value.id = `component-example-style-${Math.random().toString(36).substring(2, 9)}`
-            
-            // Add to document head to ensure CSS variables are available globally
-            document.head.appendChild(styleElement.value)
+            styleElement.value = createComponentStyles()
         }
         
-        // Update the style content with properly scoped CSS
-        // We create a unique class for this example and prefix all rules with it
-        const uniqueClass = `example-${Math.random().toString(36).substring(2, 9)}`
+        // Add our component ID to the preview container for targeting
+        previewContainer.value.setAttribute('data-example-id', componentId.value)
         
-        // Add the unique class to our preview container
-        previewContainer.value.parentNode.classList.add(uniqueClass)
+        // Process CSS to handle :root selectors
+        let cssText = styleContent.trim()
         
-        // Process styles to ensure they affect web components
-        // For CSS variables, we need to apply them to both :root and the container
-        let processedStyles = displayStyle.value
-        
-        // If styles contain :root selector with CSS variables, add them to our unique class too
-        if (processedStyles.includes(':root')) {
-            processedStyles = processedStyles.replace(/:root\s*{/g, `:root, .${uniqueClass} {`)
-        } else {
-            // Otherwise, wrap everything in our unique class
-            processedStyles = `.${uniqueClass} {\n${displayStyle.value}\n}`
+        // Make sure we properly scope the CSS 
+        if (cssText.includes(':root')) {
+            // For CSS variables, duplicate them to both :root and our scoped component
+            // This ensures they're accessible to Shadow DOM components
+            cssText = cssText.replace(/:root\s*{/g, (match) => {
+                return `:root, [data-example-id="${componentId.value}"] {`
+            })
         }
         
-        // Update the style element
-        styleElement.value.textContent = processedStyles
+        // Update the style element with our processed CSS
+        styleElement.value.textContent = cssText
         
-        // Log for debugging (helpful for users to see what's happening)
-        console.log('Applied styles with unique class:', uniqueClass)
+        // Log the applied styles for debugging
+        console.log('Applied styles for', componentId.value, ':', cssText)
+        
+        // Force a style recalculation to ensure changes are applied
+        setTimeout(() => {
+            if (previewContainer.value) {
+                // Force DOM reflow
+                void previewContainer.value.offsetHeight
+                
+                // Specifically target web components for style refresh
+                const components = previewContainer.value.querySelectorAll('*')
+                components.forEach(comp => {
+                    if (comp.tagName && comp.tagName.includes('-')) {
+                        void comp.offsetHeight
+                    }
+                })
+            }
+        }, 50)
     } catch (err) {
         console.error('Error applying styles:', err)
     }
@@ -144,47 +181,43 @@ const renderComponent = async () => {
     if (!previewContainer.value) return
 
     try {
-        // Force re-render by clearing the container first
+        // Clear the container
         previewContainer.value.innerHTML = ''
         
-        // Create a wrapper div to hold the rendered component
+        // Create a wrapper for our component
         const wrapper = document.createElement('div')
         wrapper.setAttribute('data-v-component', 'true')
-        
-        // Add a class that can be used by our style system to target this specific instance
         wrapper.classList.add('component-instance')
-        
         previewContainer.value.appendChild(wrapper)
         
-        // Make sure the web components are defined before inserting them
+        // Wait for web components to be defined
         try {
-            // Wait for web components to be registered with a timeout
+            // This helps ensure components are ready before rendering
             await Promise.race([
                 customElements.whenDefined('vwc-button'),
-                new Promise(resolve => setTimeout(resolve, 2000))
+                new Promise(resolve => setTimeout(resolve, 1000))
             ])
             await Promise.race([
                 customElements.whenDefined('vwc-input'),
-                new Promise(resolve => setTimeout(resolve, 2000))
+                new Promise(resolve => setTimeout(resolve, 1000)) 
             ])
             await Promise.race([
                 customElements.whenDefined('vwc-icon'),
-                new Promise(resolve => setTimeout(resolve, 2000))
+                new Promise(resolve => setTimeout(resolve, 1000))
             ])
         } catch (err) {
-            // Continue anyway, components might be registered later
-            console.warn('Component registration timeout:', err)
+            console.warn('Component registration timeout, continuing anyway')
         }
         
-        // Insert the code directly as HTML
+        // Insert the HTML code
         wrapper.innerHTML = displayCode.value
         
-        // Force the browser to re-evaluate styles by triggering a reflow
-        // This helps with making custom properties apply to web components
-        void previewContainer.value.offsetHeight
+        // Apply styles after ensuring component is rendered
+        setTimeout(() => {
+            applyStyles()
+        }, 50)
     } catch (err) {
         console.error('Error rendering component:', err)
-        // Display error in the preview
         previewContainer.value.innerHTML = `<div style="color: red; padding: 10px;">Error: ${err.message}</div>`
     }
 }
@@ -196,11 +229,21 @@ onBeforeUnmount(() => {
     }
 })
 
-// Initial render
+// Make sure styles are applied after the component is mounted
+onMounted(() => {
+    // We need a short delay to ensure the component is fully rendered
+    setTimeout(() => {
+        if (displayStyle.value) {
+            applyStyles()
+            console.log('Applied initial styles on mount')
+        }
+    }, 100)
+})
+
+// Initial render when preview container is available
 watch(previewContainer, (el) => {
     if (el) {
         renderComponent()
-        applyStyles()
     }
 }, { immediate: true })
 </script>
