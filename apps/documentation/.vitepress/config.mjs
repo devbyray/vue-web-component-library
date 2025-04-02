@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { resolve } from 'path'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -36,6 +37,16 @@ export default defineConfig({
   vite: {
     optimizeDeps: {
       include: ['marked']
+    },
+    resolve: {
+      alias: {
+        '@devbyray/vue-wc-components': resolve(__dirname, '../../../packages/components')
+      }
+    },
+    build: {
+      commonjsOptions: {
+        strictRequires: true
+      }
     }
   }
 })
