@@ -40,7 +40,9 @@ export default defineConfig({
     },
     resolve: {
       alias: {
-        '@devbyray/vue-wc-components': resolve(__dirname, '../../../packages/components')
+        // Point to the specific dist file rather than the directory
+        '@devbyray/vue-wc-components': resolve(__dirname, '../../../packages/components/dist/index.js'),
+        '@devbyray/vue-wc-components/dist/index.js': resolve(__dirname, '../../../packages/components/dist/index.js')
       }
     },
     build: {
