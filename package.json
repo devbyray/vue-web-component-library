@@ -10,7 +10,9 @@
     "lint": "pnpm -r lint",
     "test": "pnpm -r test",
     "docs:dev": "pnpm --filter @devbyray/vue-wc-documentation dev",
-    "docs:build": "pnpm --filter @devbyray/vue-wc-documentation build"
+    "docs:build": "pnpm --filter @devbyray/vue-wc-documentation build",
+    "vercel-build": "pnpm build:deps && pnpm docs:build",
+    "build:deps": "pnpm --filter @devbyray/vue-wc-core build && pnpm --filter ./packages/components/button build && pnpm --filter ./packages/components/input build && pnpm --filter ./packages/components/icon build && pnpm --filter @devbyray/vue-wc-components build"
   },
   "keywords": [
     "vue",

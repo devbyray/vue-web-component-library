@@ -57,6 +57,9 @@ importers:
 
   apps/documentation:
     dependencies:
+      '@devbyray/vue-wc-components':
+        specifier: workspace:^
+        version: link:../../packages/components
       highlight.js:
         specifier: ^11.11.1
         version: 11.11.1

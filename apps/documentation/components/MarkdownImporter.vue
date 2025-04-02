@@ -57,53 +57,74 @@ const fetchMarkdown = async (path) => {
   }
 }
 
-// Function to apply syntax highlighting after the content is rendered
+// Function to safely apply syntax highlighting
 const applySyntaxHighlighting = () => {
   // Select all code blocks
   const codeBlocks = document.querySelectorAll('.markdown-content pre code')
   
   // Apply highlighting to each code block
   codeBlocks?.forEach((block) => {
-    // Make sure block has a className property
-    if (!block || typeof block.className !== 'string') {
+    // Make sure block exists and has content
+    if (!block || !block.textContent) {
       return
     }
     
-    // Check if a language class is present
-    const classList = block.className.split(' ')
-    const langClass = classList.find(cls => typeof cls === 'string' && cls.startsWith('language-'))
-    
-    if (langClass) {
-      // Extract the language name
-      const lang = typeof langClass === 'string' ? langClass.replace('language-', '') : ''
+    try {
+      // Check if a language class is present
+      const classList = block.className ? block.className.split(' ') : []
+      const langClass = classList.find(cls => typeof cls === 'string' && cls.startsWith('language-'))
       
-      // Apply highlighting if the language is supported
-      if (lang && hljs.getLanguage(lang)) {
-        hljs.highlightElement(block)
+      if (langClass) {
+        // Extract the language name
+        const lang = langClass.replace('language-', '')
+        
+        // Apply highlighting if the language is supported
+        if (lang && hljs.getLanguage(lang)) {
+          hljs.highlightElement(block)
+        } else {
+          // Only apply auto-detection if we have content
+          if (block.textContent.trim()) {
+            hljs.highlightElement(block)
+          }
+        }
       } else {
-        // Try auto-detection for unknown languages
-        hljs.highlightAuto(block)
+        // Only apply auto-detection if we have content
+        if (block.textContent.trim()) {
+          hljs.highlightElement(block)
+        }
       }
-    } else {
-      // No language specified, use auto-detection
-      hljs.highlightAuto(block)
+    } catch (error) {
+      // Log the error but don't break the rendering
+      console.warn('Error highlighting code block:', error)
+      
+      // Apply basic styling if highlighting fails
+      block.classList.add('plain-code')
     }
   })
 }
 
 onMounted(async () => {
-  // Get the base URL
-  const baseUrl = import.meta.env.BASE_URL || '/'
-  // Create a path that's relative to the public directory
-  const fullPath = `${baseUrl}${props.path}`
-  
-  // Fetch and process the markdown
-  const markdownContent = await fetchMarkdown(fullPath)
-  htmlContent.value = marked.parse(markdownContent)
-  
-  // Use nextTick to ensure the content is in the DOM before highlighting
-  await nextTick()
-  applySyntaxHighlighting()
+  try {
+    // Get the base URL
+    const baseUrl = import.meta.env.BASE_URL || '/'
+    // Create a path that's relative to the public directory
+    const fullPath = `${baseUrl}${props.path}`
+    
+    // Fetch and process the markdown
+    const markdownContent = await fetchMarkdown(fullPath)
+    
+    // Only parse if we have content
+    if (markdownContent && typeof markdownContent === 'string') {
+      htmlContent.value = marked.parse(markdownContent)
+      
+      // Use nextTick to ensure the content is in the DOM before highlighting
+      await nextTick()
+      applySyntaxHighlighting()
+    }
+  } catch (error) {
+    console.error('Error rendering markdown:', error)
+    htmlContent.value = '<div class="error-message">Error loading content</div>'
+  }
 })
 </script>
 
@@ -174,5 +195,20 @@ onMounted(async () => {
     background-color: #222;
     color: #ddd;
   }
+}
+
+/* Style for error messages */
+.error-message {
+  color: #e74c3c;
+  padding: 1rem;
+  border: 1px solid #e74c3c;
+  border-radius: 4px;
+  background-color: rgba(231, 76, 60, 0.1);
+  margin: 1rem 0;
+}
+
+/* Style for plain code when highlighting fails */
+.plain-code {
+  color: #e6e6e6;
 }
 </style>

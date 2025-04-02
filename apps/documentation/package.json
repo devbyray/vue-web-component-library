@@ -4,8 +4,9 @@
   "description": "A Vue-based accessible design system with headless web components",
   "private": false,
   "scripts": {
+    "build:deps": "pnpm --filter @devbyray/vue-wc-components run build",
     "dev": "npm run copy-readme && vitepress dev",
-    "build": "npm run copy-readme && vitepress build",
+    "build": "npm run build:deps && npm run copy-readme && vitepress build",
     "preview": "vitepress preview",
     "copy-readme": "node scripts/copy-readme.js"
   },
@@ -14,6 +15,7 @@
     "vitepress": "^1.6.3"
   },
   "dependencies": {
+    "@devbyray/vue-wc-components": "workspace:^",
     "highlight.js": "^11.11.1"
   }
 }
